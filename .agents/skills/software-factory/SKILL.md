@@ -1,9 +1,9 @@
 ---
 name: software-factory
-description: Plan, bootstrap, architect, build, or improve software products and apps from a brief idea using evidence-backed competitor research, simplicity-first product scope, complete screen specifications, vendor-neutral technology/cost selection, canonical contracts, safe parallel workstreams, full-story testing, release gates, and a versioned lessons loop. Use when starting or overhauling a product, coordinating multi-agent development, or asking to ship an end-to-end software project.
+description: Use when someone proposes a software product, mobile app, website, SaaS or AI-agent idea, requests product planning or implementation, asks to finish an unfinished app, or needs coordinated multi-agent development and real release verification.
 ---
 
-# Software Factory Skill (v0.4)
+# Software Factory Skill (v0.4.2)
 
 This is an execution workflow, not permission to invent actions or claim that inaccessible tools were used. Adapt depth to risk and size: simple projects require fewer artifacts.
 
