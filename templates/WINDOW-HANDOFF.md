@@ -21,5 +21,8 @@
 ## Integration and rollback
 <!-- TODO: canonical contracts, unresolved PR overlap and migration steps -->
 
+## Merge completion
+<!-- TODO: MERGED (commit SHA and branch) / READY_TO_MERGE (target and tests) / BLOCKED (specific conflict, failure or unsafe deployment trigger). Do not equate a code merge with a release. -->
+
 ## Next owner and dependencies
 <!-- TODO -->

@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.3] — 2026-10-09
+
+Made merging compatible source-tested PRs the default delivery step instead of parking completed work indefinitely. Separated integration from production-release evidence, defined alternate-runner behavior for zero-step CI failures, guarded merge-to-main against Git-connected auto-deployment, and updated generated agent and handoff templates to track merge completion. Production authorization, security, independent restoration and provider tests remain mandatory release gates. Existing customized project-local factory bundles need intentional updates: bootstrap preserves them.
+
 ## [0.4.2] — 2026-10-09
 
 Added universal Custom Instructions trigger and Memory-summary proposal, optimized skill activation metadata, generated deterministic self-contained ZIP skills, CI upload and packaging tests. Account settings and ChatGPT Skills installation still require user action/eligibility; producing a package is not an installation.

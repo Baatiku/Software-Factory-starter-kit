@@ -12,7 +12,17 @@ Protected areas have one integrator: root routing, auth, shared server compositi
 
 Each branch keeps an immutable evidence checkpoint: base SHA, head SHA, PR URL, changed paths, requirements/journeys covered, tests actually run, failures, environment, unavailable checks, migration strategy and next integrator steps. Source-done but missing composition is PARTIAL_IMPLEMENTATION. Full source but unrun proof is IMPLEMENTED_UNVERIFIED.
 
-If two PRs overlap, identify semantically equivalent code and current tests, preserve both pending review, elect one canonical contract, and carry forward unique behavior. Never delete because a five-minute lease expired. Merge in dependency order only after executable proof.
+If two PRs overlap, identify semantically equivalent code and current tests, preserve both pending review, elect one canonical contract, and carry forward unique behavior. Never delete because a five-minute lease expired. Merge in dependency order after **appropriate executable source/contract proof**; do not require full production-provider or cutover proof merely to integrate compatible code. Fix known code/security failures before merging.
+
+## Merge-first delivery: two separate gates
+
+**Code merge is the default end of each completed workstream, not a PR left waiting indefinitely.** The integrator checks the latest head SHA, changed paths, dependency versions and genuine conflicts, runs the relevant build/unit/contract/negative tests, fixes any real failures, and merges promptly in dependency order. Prefer one short-lived integration branch for colliding work; merge non-conflicting, tested slices directly to main when it is safe. Do not create long stacked PR chains if earlier layers can be integrated now. Refresh branch bases and close superseded PRs only after their unique changes are accounted for.
+
+**A merge does not mean a release.** Production cutover still requires separate real provider/browser/device/backup/security evidence and authorization. Before merging to main, identify *every* automatic deploy trigger (GitHub Actions, Vercel/hosting Git integrations, branch hooks, DB migration/predeploy tasks, etc.). Where main would deploy unfinished software, gate or disconnect automatic production deployments through an approved reversible change first; until then merge into a non-deploying integration branch. Never force-merge an actual code/test failure or security regression simply to clear the PR queue.
+
+**If CI cannot start (runner/account/quota outage):** record the no-step job evidence, run equivalent tests against the exact checkout/SHA using an accessible local/alternate runner, and continue integration on a non-deploying branch when those tests and contract checks pass. If no executable runner is available, label the result unverified and keep the integration change isolated; do not misreport static inspections as passing tests. Production remains blocked until its proof succeeds.
+
+**Integrator accountability:** when a workstream is handed off, identify the next merge target and execute the merge as soon as dependencies are satisfied. A five-minute claim controls edits, not an indefinite veto over review/merge. For each withheld PR, record a concrete failing test/conflict/deployment hazard, owner and next correction rather than a generic “waiting for verification.”
 
 ## Coordinated claims and stale recovery
 
