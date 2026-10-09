@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.4.2] — 2026-10-09
+
+Added universal Custom Instructions trigger and Memory-summary proposal, optimized skill activation metadata, generated deterministic self-contained ZIP skills, CI upload and packaging tests. Account settings and ChatGPT Skills installation still require user action/eligibility; producing a package is not an installation.
+
+
 ## [0.4.1] — 2026-10-09
 
 Bootstrapping now produces a self-contained project with local skill, playbooks, coordinator/check tools and pinned factory version. Re-running preserves customized files; structural checks require the local runtime bundle. Added idempotency, no-overwrite and self-contained skill tests.
