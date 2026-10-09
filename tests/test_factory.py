@@ -107,9 +107,8 @@ class FactoryTests(unittest.TestCase):
             self.assertTrue((p / '.factory/playbooks/verification-and-release.md').is_file())
             self.assertTrue((p / '.factory/bin/check.py').is_file())
             self.assertTrue((p / '.factory/bin/claims.py').is_file())
-            self.assertRegex((p / '.factory/FACTORY-VERSION').read_text(encoding='utf-8'), r'^\d+\.\d+\.\d+\n
-    unittest.main()
-)
+            version = (p / '.factory/FACTORY-VERSION').read_text(encoding='utf-8').strip()
+            self.assertRegex(version, r"^\d+\.\d+\.\d+$")
             self.assertEqual([], checker.check(p, 'scaffold'))
 
     def test_repeat_scaffold_preserves_customizations_and_is_idempotent(self):
