@@ -14,6 +14,9 @@
 ## Current implementation and evidence
 <!-- TODO: actual code status, passing/failed/blocked tests and commands -->
 
+## Immediate merge queue
+<!-- TODO: integration branch/main target, PR and exact head/base SHAs, applicable executed source tests, merge order, specific blockers. Merge tested work promptly; keep production releases separately gated. -->
+
 ## Immediate next independent tasks
 <!-- TODO: exact paths, dependencies, priority, responsible window -->
 
