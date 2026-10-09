@@ -29,3 +29,7 @@ An open PR is neither merged nor automatically obsolete. A stale claim is not pr
 Idea → market and scope → complete experience → architecture/contracts/security/budget → independent workstreams → implementation → integrated verification → staged release → feedback and method improvement.
 
 Plan comprehensively but adapt rapidly with a dated decision log when real evidence changes the answer. Avoid premature architecture commitments before knowing workloads.
+
+## Generated project runtime
+
+A new project includes `.agents/skills/software-factory/SKILL.md`, `.factory/playbooks/**`, `.factory/bin/check.py`, `.factory/bin/claims.py` and `.factory/FACTORY-VERSION`. Read and apply them without requiring chat history. Re-running upstream bootstrap creates missing files but does not silently overwrite customizations or upgrade existing files; review upstream changes consciously.
