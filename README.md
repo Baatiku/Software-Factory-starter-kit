@@ -1,6 +1,6 @@
 # Software Factory Starter Kit
 
-**Factory v0.4.2** — a reusable, vendor-neutral engineering workflow developed from lessons learned building Masanawa. Its purpose is to turn a brief product idea into a researched, simple, screen-complete, implementable and verifiable product.
+**Factory v0.4.3** — a reusable, vendor-neutral engineering workflow developed from lessons learned building Masanawa. Its purpose is to turn a brief product idea into a researched, simple, screen-complete, implementable and verifiable product.
 
 This repository is **a skill and executable planning/coordination starter kit**, not an always-on autonomous service. It cannot create parallel ChatGPT conversations automatically, install account-wide skills, or guarantee releases without actual access and tests. Documentation is never proof that an application works.
 
@@ -19,7 +19,7 @@ Changing this GitHub repository does **not** change your ChatGPT account Memory,
 3. Bootstrap now copies the factory skill to `.agents/skills/software-factory/`, provider-neutral playbooks to `.factory/playbooks/` and local scripts to `.factory/bin/`, so supported Codex workflows can discover project-local guidance. Research and *fill* the deliberately incomplete project documents.
 4. Run: python /path/to/new/repo/.factory/bin/check.py --repo /path/to/new/repo --gate design
 5. Only start independent UI work after the design gate is complete. Register exact-path ownership claims, heartbeat during work, and publish SHA-specific handoffs.
-6. Use Work or another controlled integration executor to verify real user journeys before any release.
+6. **Merge-first:** integrate completed, contract-tested PRs promptly into main if non-deploying, or into a shared integration branch if main triggers production. Use Work or another controlled executor to verify full journeys before any release.
 
 ## GitHub-backed workstream claims (v0.4)
 
@@ -49,7 +49,7 @@ Claims for multiple exact files or `directory/**` roots are updated together wit
 
 ## Key distinctions
 
-**Scaffold present ≠ researched. Design complete ≠ tested. Code present ≠ integrated. CI configuration ≠ passing CI. Health endpoint ≠ real customer journey.**
+**Scaffold present ≠ researched. Design complete ≠ tested. Code present ≠ integrated. Code merged ≠ released. CI configuration ≠ passing CI. Health endpoint ≠ real customer journey.**
 
 A simple brochure site should not receive fintech-level paperwork. A wallet, health or identity platform must receive deeper threat, privacy, integrity and operating controls. Build the simplest sufficient solution, not the largest plan.
 
@@ -73,4 +73,4 @@ Add a properly authenticated GitHub App / PR policy check that verifies claimed 
 
 ## Status
 
-v0.4.1 is a starter kit: scripts validate structure and internal references, not competitor truth, full UX quality, live CI, device performance or production readiness. See [release requirements](references/verification-and-release.md).
+v0.4.3 is a starter kit: scripts validate structure and internal references, not competitor truth, full UX quality, live CI, device performance or production readiness. See [release requirements](references/verification-and-release.md).
