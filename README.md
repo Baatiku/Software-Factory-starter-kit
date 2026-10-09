@@ -1,6 +1,6 @@
 # Software Factory Starter Kit
 
-**Factory v0.3.0** — a reusable, vendor-neutral engineering workflow developed from lessons learned building Masanawa. Its purpose is to turn a brief product idea into a researched, simple, screen-complete, implementable and verifiable product.
+**Factory v0.4.0** — a reusable, vendor-neutral engineering workflow developed from lessons learned building Masanawa. Its purpose is to turn a brief product idea into a researched, simple, screen-complete, implementable and verifiable product.
 
 This repository is **a skill and executable planning/coordination starter kit**, not an always-on autonomous service. It cannot create parallel ChatGPT conversations automatically, install account-wide skills, or guarantee releases without actual access and tests. Documentation is never proof that an application works.
 
@@ -10,8 +10,25 @@ This repository is **a skill and executable planning/coordination starter kit**,
 2. In a new repository, run: python path/to/Software-Factory-starter-kit/scripts/bootstrap.py --repo /path/to/new/repo --idea "Your product idea"
 3. Have ChatGPT Work/Codex research and *fill* the generated documents. Bootstrap creates intentionally incomplete templates.
 4. Run: python path/to/Software-Factory-starter-kit/scripts/check.py --repo /path/to/new/repo --gate design
-5. Only start independent UI work after the design gate is complete. Publish exact-path claims and branch handoffs for parallel work.
+5. Only start independent UI work after the design gate is complete. Register exact-path ownership claims, heartbeat during work, and publish SHA-specific handoffs.
 6. Use Work or another controlled integration executor to verify real user journeys before any release.
+
+## GitHub-backed workstream claims (v0.4)
+
+Run the standalone `scripts/claims.py` against a TARGET PROJECT repository. Its default coordination branch is `factory/claims`, so claims do not clutter `main`. Use a securely provided least-privilege `GITHUB_TOKEN` with repository Contents read/write; **never paste tokens in command examples, chats, PRs, or logs**.
+
+```bash
+python scripts/claims.py --repo ORG/PROJECT claim \
+  --owner window-U01 --scope U01 --branch work/u01 \
+  --base-sha <40-character-SHA-from-real-project> \
+  --path 'services/feature/**' --path 'apps/mobile/lib/feature/**'
+
+python scripts/claims.py --repo ORG/PROJECT status
+python scripts/claims.py --repo ORG/PROJECT heartbeat --owner window-U01 --claim-id CLAIM_UUID
+python scripts/claims.py --repo ORG/PROJECT release --owner window-U01 --claim-id CLAIM_UUID --reason 'Code/tests handed off in PR #123'
+```
+
+Claims for multiple exact files or `directory/**` roots are updated together with a GitHub blob-SHA precondition and conflict-retry. **Five-minute expiry blocks new claimants until human-reviewed reconciliation or original-owner release; it is not automatic takeover.** This is cooperative coordination, *not* GitHub permission enforcement or live-provider qualification. See [the protocol](references/parallel-delivery.md).
 
 ## Planning outputs
 
@@ -34,7 +51,7 @@ A simple brochure site should not receive fintech-level paperwork. A wallet, hea
 - [AGENTS.md](AGENTS.md): repo and generated-project operating instructions.
 - [references/](references/): planning, UX, owner defaults, provider-neutral skill audit, threat, verification, parallel work and improvement playbooks.
 - [templates/](templates/): starter documents copied without overwriting existing files.
-- [scripts/](scripts/): safe bootstrap and evidence-aware structural checks.
+- [scripts/](scripts/): safe bootstrap, CAS-backed workstream claims and evidence-aware structural checks.
 - [tests/](tests/): positive/negative regression tests.
 - [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md): future improvement process.
 
@@ -44,8 +61,8 @@ Use available connected GitHub tools for safe repository operations, Work for mu
 
 ## Recommended future evolution
 
-Implement a properly authenticated GitHub App that enforces atomic exact-path leases, validates PR ownership and records per-SHA quality evidence. Current five-minute text claims are a coordination protocol, **not an atomic distributed lock**. The registry must not silently treat expired leases as permission to delete existing unmerged work.
+Add a properly authenticated GitHub App / PR policy check that verifies claimed owners and changed paths, prevents bypassing the voluntary CAS registry, and records per-SHA verification evidence. This standalone coordinator does not authenticate owner names or restrict direct Git pushes.
 
 ## Status
 
-v0.3 is a starter kit: scripts validate structure and internal references, not competitor truth, full UX quality, live CI, device performance or production readiness. See [release requirements](references/verification-and-release.md).
+v0.4 is a starter kit: scripts validate structure and internal references, not competitor truth, full UX quality, live CI, device performance or production readiness. See [release requirements](references/verification-and-release.md).

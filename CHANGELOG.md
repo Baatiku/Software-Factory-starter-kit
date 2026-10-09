@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.0] — 2026-10-09
+
+Added a dependency-free GitHub CAS ownership coordinator, five-minute renewable multi-path claims, conflict and stale-claim blocking, audited owner-only releases, CLI guidance and simulated-concurrency regression tests. This protects cooperating workstreams but does not enforce ownership against direct Git pushes.
+
 ## [0.3.1] — 2026-10-09
 
 Added non-sensitive enduring owner defaults, transferable lessons from available platform skills, stronger kit integrity checks, a positive design-gate regression and explicit rejection of simulated verification claimed as real.

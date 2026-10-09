@@ -4,4 +4,4 @@
 |---|---|---|---|---|---|---|---|---|
 <!-- TODO: assign actual scopes from complete product plan and reconcile open PRs -->
 
-Rules: one writer per contested path; inspect live main and PRs first; five-minute claims are advisory without compare-and-swap protection; never erase unmerged source on lease expiry. Integrate shared auth/schema/router/ledger/build/deploy sequentially.
+Rules: one writer per contested path; inspect live main and PRs first; register five-minute exact-path claims with scripts/claims.py (GitHub CAS); expiry never authorizes takeover; never erase unmerged source on lease expiry. Integrate shared auth/schema/router/ledger/build/deploy sequentially.
