@@ -3,7 +3,7 @@ name: software-factory
 description: Use when someone proposes a software product, mobile app, website, SaaS or AI-agent idea, requests product planning or implementation, asks to finish an unfinished app, or needs coordinated multi-agent development and real release verification.
 ---
 
-# Software Factory Skill (v0.4.2)
+# Software Factory Skill (v0.4.3)
 
 This is an execution workflow, not permission to invent actions or claim that inaccessible tools were used. Adapt depth to risk and size: simple projects require fewer artifacts.
 
@@ -30,14 +30,15 @@ Reference paths are relative to this repository root, not the skill directory. L
 6. Create/maintain canonical architecture, threat and privacy models, contract schemas, design system, requirement→screen→journey→test traceability, budgets, operations, and evidence gates.
 7. Run scaffold design check; unresolved placeholders mean NOT READY. A structurally passing check is not a qualitative or operational acceptance.
 8. Split complete vertical slices by real dependencies, ownership paths and integration capacity; read live PR heads and use scripts/claims.py to acquire/heartbeat exact-path claims on the target repo before edits; do not steal stale records. One owner per high-risk shared path.
-9. Implement actual end-to-end behavior with automated tests and realistic recovery. Keep unfinished work in draft PRs with branch/base/head SHAs and evidence; don't substitute chat summaries.
-10. One integrator reconciles branches and executes real device/browser/API/DB/provider/auth and restore/rollback tests. Distinguish verified from blocked tests and from simulated output.
+9. Implement real end-to-end behavior with automated tests and realistic recovery. Open scoped PRs with exact SHAs and evidence. **Merge completed, compatible changes promptly**; PR creation alone is not completion. Keep genuinely unfinished work as draft PRs, not an accumulating backlog.
+10. One integrator continuously reconciles and **merges dependency-ready PRs** into an integration branch or directly into main when main cannot trigger unsafe production effects; test the unified SHA. Separate **code integration** (appropriate local/contract checks) from **production release** (real device/browser/API/DB/provider/auth and restoration proof). Missing CI runners require alternate executable checks and truthful evidence, not indefinite PR parking; actual failing code must be fixed.
 11. Guard production and chargeable/destructive/external side effects with explicit permission. Update lessons and templates with versioned changes so future products inherit improvements.
 
 ## Stop gates
 
 - **Before parallel UI**: complete actor/screen inventory, navigation, behavior, design states and design review.
 - **Before shared integration**: canonical contracts published and conflicting claims resolved.
+- **Before code merge**: inspect current head, conflicts, ownership, applicable executable tests, security and deployment triggers; fix genuine failures. If main can deploy automatically, merge to a protected integration branch until deployment is explicitly gated.
 - **Before release**: real, SHA-specific end-to-end proof; required security, accessibility, data recovery, performance and rollback checks performed.
 - **If blocked**: record exact failure/dependency and preserve source. Never relabel unverified work as complete.
 
