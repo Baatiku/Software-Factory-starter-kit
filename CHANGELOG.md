@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.1] — 2026-10-09
+
+Bootstrapping now produces a self-contained project with local skill, playbooks, coordinator/check tools and pinned factory version. Re-running preserves customized files; structural checks require the local runtime bundle. Added idempotency, no-overwrite and self-contained skill tests.
+
 ## [0.4.0] — 2026-10-09
 
 Added a dependency-free GitHub CAS ownership coordinator, five-minute renewable multi-path claims, conflict and stale-claim blocking, audited owner-only releases, CLI guidance and simulated-concurrency regression tests. This protects cooperating workstreams but does not enforce ownership against direct Git pushes.

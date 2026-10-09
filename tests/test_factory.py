@@ -94,5 +94,46 @@ class FactoryTests(unittest.TestCase):
             findings = checker.check(p, 'handoff')
             self.assertTrue(any('VERIFIED CLAIM WITHOUT PASS_REAL' in i for i in findings), findings)
 
+
+    def test_new_project_contains_local_skill_and_tools(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d)
+            created, preserved = bootstrap.bootstrap(p, 'Build a simple project', ROOT / 'templates')
+            self.assertGreater(created, 25)
+            self.assertEqual(0, preserved)
+            skill = (p / '.agents/skills/software-factory/SKILL.md').read_text(encoding='utf-8')
+            self.assertIn('.factory/playbooks/screen-design.md', skill)
+            self.assertIn('.factory/bin/claims.py', skill)
+            self.assertTrue((p / '.factory/playbooks/verification-and-release.md').is_file())
+            self.assertTrue((p / '.factory/bin/check.py').is_file())
+            self.assertTrue((p / '.factory/bin/claims.py').is_file())
+            self.assertRegex((p / '.factory/FACTORY-VERSION').read_text(encoding='utf-8'), r'^\d+\.\d+\.\d+\n
+    unittest.main()
+)
+            self.assertEqual([], checker.check(p, 'scaffold'))
+
+    def test_repeat_scaffold_preserves_customizations_and_is_idempotent(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d)
+            custom_skill = p / '.agents/skills/software-factory/SKILL.md'
+            custom_skill.parent.mkdir(parents=True)
+            custom_skill.write_text('project-specific skill', encoding='utf-8')
+            custom_ref = p / '.factory/playbooks/operating-protocol.md'
+            custom_ref.parent.mkdir(parents=True)
+            custom_ref.write_text('custom playbook', encoding='utf-8')
+            created, preserved = bootstrap.bootstrap(p, 'First idea', ROOT / 'templates')
+            self.assertGreater(created, 0)
+            self.assertGreaterEqual(preserved, 2)
+            second_created, second_preserved = bootstrap.bootstrap(p, 'Different idea', ROOT / 'templates')
+            self.assertEqual(0, second_created)
+            self.assertGreater(second_preserved, preserved)
+            self.assertEqual('project-specific skill', custom_skill.read_text(encoding='utf-8'))
+            self.assertEqual('custom playbook', custom_ref.read_text(encoding='utf-8'))
+            self.assertIn('First idea', (p / 'docs/PROJECT-CHARTER.md').read_text(encoding='utf-8'))
+
+    def test_does_not_scaffold_factory_into_itself(self):
+        with self.assertRaisesRegex(ValueError, 'target project'):
+            bootstrap.bootstrap(ROOT, 'should fail', ROOT / 'templates')
+
 if __name__ == '__main__':
     unittest.main()

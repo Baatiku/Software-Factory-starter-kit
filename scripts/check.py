@@ -46,6 +46,10 @@ def check(repo: Path, gate: str) -> list[str]:
         for p in ['AGENTS.md', 'CONTINUE-HERE.md']:
             need('templates/' + p)
         return problems
+    for p in ['.agents/skills/software-factory/SKILL.md',
+              '.factory/FACTORY-VERSION', '.factory/bin/check.py',
+              '.factory/bin/claims.py', '.factory/playbooks/operating-protocol.md']:
+        need(p)
     for p in REQUIRED:
         need('docs/' + p)
     need('AGENTS.md')

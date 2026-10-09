@@ -1,6 +1,6 @@
 # Software Factory Starter Kit
 
-**Factory v0.4.0** — a reusable, vendor-neutral engineering workflow developed from lessons learned building Masanawa. Its purpose is to turn a brief product idea into a researched, simple, screen-complete, implementable and verifiable product.
+**Factory v0.4.1** — a reusable, vendor-neutral engineering workflow developed from lessons learned building Masanawa. Its purpose is to turn a brief product idea into a researched, simple, screen-complete, implementable and verifiable product.
 
 This repository is **a skill and executable planning/coordination starter kit**, not an always-on autonomous service. It cannot create parallel ChatGPT conversations automatically, install account-wide skills, or guarantee releases without actual access and tests. Documentation is never proof that an application works.
 
@@ -8,17 +8,17 @@ This repository is **a skill and executable planning/coordination starter kit**,
 
 1. Read [the factory skill](.agents/skills/software-factory/SKILL.md) and [factory rules](AGENTS.md).
 2. In a new repository, run: python path/to/Software-Factory-starter-kit/scripts/bootstrap.py --repo /path/to/new/repo --idea "Your product idea"
-3. Have ChatGPT Work/Codex research and *fill* the generated documents. Bootstrap creates intentionally incomplete templates.
-4. Run: python path/to/Software-Factory-starter-kit/scripts/check.py --repo /path/to/new/repo --gate design
+3. Bootstrap now copies the factory skill to `.agents/skills/software-factory/`, provider-neutral playbooks to `.factory/playbooks/` and local scripts to `.factory/bin/`, so supported Codex workflows can discover project-local guidance. Research and *fill* the deliberately incomplete project documents.
+4. Run: python /path/to/new/repo/.factory/bin/check.py --repo /path/to/new/repo --gate design
 5. Only start independent UI work after the design gate is complete. Register exact-path ownership claims, heartbeat during work, and publish SHA-specific handoffs.
 6. Use Work or another controlled integration executor to verify real user journeys before any release.
 
 ## GitHub-backed workstream claims (v0.4)
 
-Run the standalone `scripts/claims.py` against a TARGET PROJECT repository. Its default coordination branch is `factory/claims`, so claims do not clutter `main`. Use a securely provided least-privilege `GITHUB_TOKEN` with repository Contents read/write; **never paste tokens in command examples, chats, PRs, or logs**.
+Run the project's `.factory/bin/claims.py` against its GitHub repository. Its default coordination branch is `factory/claims`, so claims do not clutter `main`. Use a securely provided least-privilege `GITHUB_TOKEN` with repository Contents read/write; **never paste tokens in command examples, chats, PRs, or logs**.
 
 ```bash
-python scripts/claims.py --repo ORG/PROJECT claim \
+python .factory/bin/claims.py --repo ORG/PROJECT claim \
   --owner window-U01 --scope U01 --branch work/u01 \
   --base-sha <40-character-SHA-from-real-project> \
   --path 'services/feature/**' --path 'apps/mobile/lib/feature/**'
@@ -65,4 +65,4 @@ Add a properly authenticated GitHub App / PR policy check that verifies claimed 
 
 ## Status
 
-v0.4 is a starter kit: scripts validate structure and internal references, not competitor truth, full UX quality, live CI, device performance or production readiness. See [release requirements](references/verification-and-release.md).
+v0.4.1 is a starter kit: scripts validate structure and internal references, not competitor truth, full UX quality, live CI, device performance or production readiness. See [release requirements](references/verification-and-release.md).

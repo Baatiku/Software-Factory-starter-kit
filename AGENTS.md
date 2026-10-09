@@ -1,6 +1,6 @@
 # Software Factory — contributor and coding-agent rules
 
-Read this file and the appropriate skill before editing any file.
+Read this file and the appropriate skill before editing any file. Bootstrapped projects carry their own local skill, playbooks and essential check/claim scripts.
 
 1. Prefer small, real, complete improvements over feature inflation. Do not manufacture more documentation unless it closes an evidence gap or enables actual execution.
 2. Inspect main, issues, open/draft PRs, existing files and ownership before writes. Never replace prior source or eliminate unfinished branches without reconciliation.
