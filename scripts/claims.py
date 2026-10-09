@@ -150,6 +150,13 @@ class GithubContents:
             value = self.request("GET", "/contents/" + path + "?" + query)
         except ApiError as exc:
             if exc.status == 404:
+                # Distinguish an absent registry file from a missing coordination branch.
+                try:
+                    self.request("GET", "/git/ref/heads/" + urllib.parse.quote(self.branch, safe="/"))
+                except ApiError as other:
+                    if other.status == 404:
+                        raise ClaimError("Coordination branch missing; ownership UNKNOWN") from None
+                    raise
                 return None, None
             raise
         if value.get("encoding") != "base64" or not value.get("sha"):

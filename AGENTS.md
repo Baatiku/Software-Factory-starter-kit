@@ -7,7 +7,7 @@ Read this file and the appropriate skill before editing any file.
 3. Research claims need dates and citations. Separate facts, hypotheses, simulations and assumptions. Do not prefer a vendor because it has an installed skill.
 4. The factory is domain-neutral. Never import Masanawa's five tabs, agent names, payment providers, colors or navigation into unrelated products as universal rules.
 5. UX decisions must trace to screens, feature contracts, journeys and actual tests before parallel UI work.
-6. Use one owner for contested files (root router, auth, database migration registry, payments, native setup, production deployment). Five-minute exact-path claims must be published; they are advisory without atomic locking.
+6. Use one owner for contested files (root router, auth, database migration registry, payments, native setup, production deployment). Use the five-minute GitHub CAS registry when available. It blocks cooperative overlapping path claims, including stale ones; it is not a replacement for branch protection and PR review.
 7. Write scoped source + tests. Mocking a provider for unit tests is valid, claiming a mocked flow has been integrated end to end is not.
 8. Never commit tokens, secrets, production personal data, real account identifiers or proprietary assets. Do not execute destructive operations or initiate paid resources without appropriate authorization.
 9. State execution status precisely: PLANNED, PARTIAL_IMPLEMENTATION, IMPLEMENTED_UNVERIFIED, VERIFIED_E2E, DEPLOYED_VERIFIED. Only externally executed evidence can justify latter states.

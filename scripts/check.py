@@ -32,7 +32,8 @@ def check(repo: Path, gate: str) -> list[str]:
 
     if gate == 'kit':
         for p in ['README.md', 'AGENTS.md', '.agents/skills/software-factory/SKILL.md',
-                  'scripts/bootstrap.py', 'scripts/check.py', 'tests/test_factory.py',
+                  'scripts/bootstrap.py', 'scripts/check.py', 'scripts/claims.py',
+                  'tests/test_factory.py', 'tests/test_claims.py',
                   '.github/workflows/checks.yml', 'CONTRIBUTING.md', 'CHANGELOG.md']:
             need(p)
         for p in ['operating-protocol.md','owner-defaults.md','research-and-simplicity.md',
