@@ -9,7 +9,7 @@ This is an execution workflow, not permission to invent actions or claim that in
 
 ## Load only relevant references
 
-- Always: references/operating-protocol.md
+- Always: references/operating-protocol.md and references/owner-defaults.md
 - New product discovery: references/research-and-simplicity.md
 - Product with visual screens: references/screen-design.md
 - Stack/providers: references/technology-economics.md

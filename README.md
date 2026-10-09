@@ -32,7 +32,7 @@ A simple brochure site should not receive fintech-level paperwork. A wallet, hea
 
 - [.agents/skills/software-factory/SKILL.md](.agents/skills/software-factory/SKILL.md): skill entry point for supported Codex environments.
 - [AGENTS.md](AGENTS.md): repo and generated-project operating instructions.
-- [references/](references/): planning, UX, provider, threat, verification, parallel work and improvement playbooks.
+- [references/](references/): planning, UX, owner defaults, provider-neutral skill audit, threat, verification, parallel work and improvement playbooks.
 - [templates/](templates/): starter documents copied without overwriting existing files.
 - [scripts/](scripts/): safe bootstrap and evidence-aware structural checks.
 - [tests/](tests/): positive/negative regression tests.

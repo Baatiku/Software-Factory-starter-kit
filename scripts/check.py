@@ -35,6 +35,11 @@ def check(repo: Path, gate: str) -> list[str]:
                   'scripts/bootstrap.py', 'scripts/check.py', 'tests/test_factory.py',
                   '.github/workflows/checks.yml', 'CONTRIBUTING.md', 'CHANGELOG.md']:
             need(p)
+        for p in ['operating-protocol.md','owner-defaults.md','research-and-simplicity.md',
+                  'screen-design.md','technology-economics.md','parallel-delivery.md',
+                  'security-privacy-operations.md','verification-and-release.md',
+                  'continuous-improvement.md','skill-capability-audit.md']:
+            need('references/' + p)
         for p in REQUIRED:
             need('templates/' + p)
         for p in ['AGENTS.md', 'CONTINUE-HERE.md']:
@@ -124,7 +129,9 @@ def check(repo: Path, gate: str) -> list[str]:
             if not isinstance(ev.get('journeys'), list) or not ev['journeys']:
                 problems.append('NO RELEASE JOURNEY EVIDENCE')
             else:
-                required_journeys = {j.get('id') for j in trace.get('journeys', [])} if 'trace' in locals() else set()
+                required_journeys = {j for r in trace.get('requirements', [])
+                                     if r.get('scope') in ('CORE_NOW', 'DIFFERENTIATOR_NOW')
+                                     for j in r.get('journeys', [])} if 'trace' in locals() else set()
                 found_journeys = {j.get('id') for j in ev['journeys']}
                 for missing in required_journeys - found_journeys:
                     problems.append('MISSING RELEASE JOURNEY ' + str(missing))
