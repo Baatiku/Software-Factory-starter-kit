@@ -34,3 +34,15 @@ If two PRs overlap, identify semantically equivalent code and current tests, pre
 - The first release is tested with deterministic simulated collisions. A credentialed live GitHub write/read/heartbeat/release test is still outstanding.
 
 Example usage is in README.md. Record all recovered stale claims in registry history and link the review. Never delete code or PRs on expiry.
+
+## Outcome-first dispatch and bounded integration capacity
+
+Prefer continuing substantive feature PRs and completing connected customer journeys before isolated helpers or speculative hardening. A justified security fix remains necessary, but its handoff must name the parent milestone still unfinished. Planned allocation files are templates, not live task completion/ownership registries; dispatch from current claims, PR source and executed evidence.
+
+One canonical qualification tool and domain authority per purpose. Consolidate useful checks from competing helpers rather than create another implementation to avoid a path collision. Keep existing source until every unique behavior/test is accounted for.
+
+Use one continuing reviewed safe integration baseline rather than a new branch for every patch. Verify actual deployment filters: naming a branch integration does not prove no deployment. Publish bounded exact-path composition/test/export transfers and allow authorized non-overlapping source review/merge delegation; protected root/auth/money authority remains singular. Dependencies block their actual contracts, not every independent feature until the whole integrator is finished.
+
+Inspect executable toolchains before dispatch. When unavailable, record exact commands/environment, assign execution to a capable runner/window and continue independent connected source. Do not repeatedly retry zero-step CI or manufacture extra evidence scripts instead of implementing the product. Neither static inspection nor rewritten simulated functions replace repository tests.
+
+For every waiting PR require current head, specific dependency/conflict/failing-or-unavailable command/deploy hazard, accountable owner and next executable correction. “Waiting for integration” alone is not a disposition. Keep integration and release evidence separate; do not force unsafe code through a merge.
