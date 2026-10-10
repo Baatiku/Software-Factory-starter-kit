@@ -1,9 +1,9 @@
 ---
 name: software-factory
-description: Use when someone proposes a software product, mobile app, website, SaaS or AI-agent idea, requests product planning or implementation, asks to finish an unfinished app, or needs coordinated multi-agent development and real release verification.
+description: Use when someone proposes a software product, mobile app, website, SaaS or AI-agent idea, requests product planning or implementation, asks to finish an unfinished app, requests a feature upgrade to an existing product, or needs coordinated multi-agent development and real release verification.
 ---
 
-# Software Factory Skill (v0.4.3)
+# Software Factory Skill (v0.4.4)
 
 This is an execution workflow, not permission to invent actions or claim that inaccessible tools were used. Adapt depth to risk and size: simple projects require fewer artifacts.
 
@@ -34,6 +34,16 @@ Reference paths are relative to this repository root, not the skill directory. L
 10. One integrator continuously reconciles and **merges dependency-ready PRs** into an integration branch or directly into main when main cannot trigger unsafe production effects; test the unified SHA. Separate **code integration** (appropriate local/contract checks) from **production release** (real device/browser/API/DB/provider/auth and restoration proof). Missing CI runners require alternate executable checks and truthful evidence, not indefinite PR parking; actual failing code must be fixed.
 11. Guard production and chargeable/destructive/external side effects with explicit permission. Update lessons and templates with versioned changes so future products inherit improvements.
 
+## Existing-product upgrades and outcome-first dispatch
+
+Recover current main, local improvements, relevant PR heads/files and live ownership before replanning. Classify each requested journey as missing source, disconnected source, source-tested, integrated or externally qualified; allocation-template status is never live completion evidence. Reuse prior implementation and limit reading to affected contracts.
+
+Dispatch complete customer milestones before isolated helpers. Tie necessary hardening to a demonstrated milestone/security blocker; a partial safeguard never completes its parent lane. Elect one canonical verification/cleanup authority rather than creating another tool to avoid a path collision. Identify usable toolchains before assigning verification.
+
+Keep one continuing reviewed safe integration baseline. Publish bounded exact-path composition transfers and delegate non-overlapping review/merge to avoid a root-integrator bottleneck; protected authority remains singular. Dependencies block required contracts, not independent implementation. Every held PR needs exact head, concrete blocker, responsible owner and next executable action. Continue implementable milestone source while external execution remains blocked; never substitute simulations or static checks for repository tests.
+
+Generate these rules through templates/AGENTS.md, CONTINUE-HERE.md, WORKSTREAMS.md and WINDOW-HANDOFF.md. Record delivery_schema_version 1 milestone handoffs with source completeness and blocker assignments; scripts/check.py validates structure only. Existing customized bundles require a reviewed upgrade; bootstrap must not overwrite them.
+
 ## Stop gates
 
 - **Before parallel UI**: complete actor/screen inventory, navigation, behavior, design states and design review.
@@ -43,3 +53,4 @@ Reference paths are relative to this repository root, not the skill directory. L
 - **If blocked**: record exact failure/dependency and preserve source. Never relabel unverified work as complete.
 
 Use scripts/bootstrap.py for non-destructive scaffolding, scripts/claims.py for GitHub CAS ownership coordination and scripts/check.py for structural design/handoff/release-evidence checks. Neither guarantees real-world correctness.
+

@@ -47,9 +47,10 @@ class MergeFirstPolicyTests(unittest.TestCase):
             guide = (project / ".factory/playbooks/parallel-delivery.md").read_text(encoding="utf-8")
             self.assertIn("integrating its compatible tested changes", agent)
             self.assertIn("Merge-first delivery", guide)
-            self.assertEqual("0.4.3", (project / ".factory/FACTORY-VERSION").read_text().strip())
+            self.assertEqual("0.4.4", (project / ".factory/FACTORY-VERSION").read_text().strip())
             module.bootstrap(project, "Other idea", ROOT / "templates")
             self.assertIn("Merge-first delivery", (project / ".factory/playbooks/parallel-delivery.md").read_text())
 
 if __name__ == "__main__":
     unittest.main()
+

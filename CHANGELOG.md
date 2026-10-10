@@ -1,8 +1,8 @@
 # Changelog
 
-## Unreleased — 2026-10-10
+## [0.4.4] — 2026-10-10
 
-Documentation lesson: outcome-first dispatch, live PR/claim-based backlog interpretation, canonical helper consolidation, one reviewed integration baseline, bounded shared-file transfers and accountable toolchain/merge blockers. Prevent partial guard work from being mistaken for lane completion. Compatibility: existing ownership/test/release gates and customized scaffold files remain; existing projects intentionally adopt the new dispatch policy. No runtime/template/script or skill package version changed. Validation is documentation consistency and preserved source-tree checks, not product acceptance.
+Documentation lesson: outcome-first dispatch, live PR/claim-based backlog interpretation, canonical helper consolidation, one reviewed integration baseline, bounded shared-file transfers and accountable toolchain/merge blockers. Prevent partial guard work from being mistaken for lane completion. Compatibility: existing ownership/test/release gates and customized scaffold files remain; existing projects intentionally adopt the new dispatch policy. Entry skill and generated contributor/continuation/workstream/handoff rules now inherit this policy. Optional delivery-schema v1 structural checks reject missing milestone/blocker ownership and false source-completeness claims; legacy handoffs remain compatible. Fresh bootstrap, preserved customizations and packaged skill propagation are regression-tested. Existing projects must intentionally upgrade customized files; no product acceptance is implied.
 
 ## [0.4.3] — 2026-10-09
 
@@ -32,3 +32,4 @@ Initial public GitHub release of the improved Software Factory kit: portable ski
 ## [0.2.0] — 2026-10-09 (local prototype)
 
 Added competitor benchmark, simplicity reviews, page-by-page screen design and stack/cost discipline; only available as a local starter archive before this repository was initialized.
+

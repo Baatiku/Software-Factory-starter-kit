@@ -21,6 +21,40 @@ def sha(s):
     return isinstance(s, str) and bool(re.fullmatch('[0-9a-f]{40}', s))
 
 
+def check_delivery_handoff(h: dict) -> list[str]:
+    """Validate optional milestone metadata, never certify actual execution."""
+    if 'delivery_schema_version' not in h:
+        return []  # Existing projects adopt deliberately; no forced migration.
+    findings = []
+    if h.get('delivery_schema_version') != 1:
+        return ['UNSUPPORTED DELIVERY SCHEMA']
+    if not isinstance(h.get('milestone_id'), str) or not h['milestone_id'].strip():
+        findings.append('DELIVERY MISSING MILESTONE')
+    journeys = h.get('journeys')
+    if not isinstance(journeys, list) or not journeys or any(
+            not isinstance(j, str) or not j.strip() for j in journeys):
+        findings.append('DELIVERY MISSING JOURNEYS')
+    complete = h.get('source_complete')
+    remaining = h.get('remaining_source')
+    if not isinstance(complete, bool) or not isinstance(remaining, list) or any(
+            not isinstance(item, str) or not item.strip() for item in remaining):
+        findings.append('DELIVERY INVALID SOURCE COMPLETENESS')
+    elif complete and remaining:
+        findings.append('DELIVERY COMPLETE WITH SOURCE REMAINING')
+    elif not complete and (not remaining or h.get('status') != 'PARTIAL_IMPLEMENTATION'):
+        findings.append('DELIVERY PARTIAL SOURCE MISCLASSIFIED')
+    blockers = h.get('blocked_actions')
+    if not isinstance(blockers, list):
+        findings.append('DELIVERY MISSING BLOCKER ASSIGNMENTS')
+    else:
+        for blocker in blockers:
+            if not isinstance(blocker, dict) or any(
+                    not isinstance(blocker.get(k), str) or not blocker[k].strip()
+                    for k in ('reason', 'owner', 'next_action')):
+                findings.append('DELIVERY BLOCKER MISSING REASON/OWNER/NEXT ACTION')
+    return findings
+
+
 def check(repo: Path, gate: str) -> list[str]:
     problems = []
 
@@ -116,6 +150,7 @@ def check(repo: Path, gate: str) -> list[str]:
         for f in handoffs:
             try:
                 h = json.loads(f.read_text(encoding='utf-8'))
+                problems.extend(issue + ' ' + f.name for issue in check_delivery_handoff(h))
                 if not sha(h.get('base_sha')) or not sha(h.get('head_sha')):
                     problems.append('HANDOFF MISSING COMMIT SHAS ' + f.name)
                 if not h.get('paths') or not h.get('tests') or not h.get('pr'):
@@ -167,3 +202,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

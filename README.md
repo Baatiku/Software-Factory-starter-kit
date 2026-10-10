@@ -1,6 +1,6 @@
 # Software Factory Starter Kit
 
-**Factory v0.4.3** — a reusable, vendor-neutral engineering workflow developed from lessons learned building Masanawa. Its purpose is to turn a brief product idea into a researched, simple, screen-complete, implementable and verifiable product.
+**Factory v0.4.4** — a reusable, vendor-neutral engineering workflow developed from lessons learned building Masanawa. Its purpose is to turn a brief product idea into a researched, simple, screen-complete, implementable and verifiable product.
 
 This repository is **a skill and executable planning/coordination starter kit**, not an always-on autonomous service. It cannot create parallel ChatGPT conversations automatically, install account-wide skills, or guarantee releases without actual access and tests. Documentation is never proof that an application works.
 
@@ -73,4 +73,5 @@ Add a properly authenticated GitHub App / PR policy check that verifies claimed 
 
 ## Status
 
-v0.4.3 is a starter kit: scripts validate structure and internal references, not competitor truth, full UX quality, live CI, device performance or production readiness. See [release requirements](references/verification-and-release.md).
+v0.4.4 is a starter kit: scripts validate structure and internal references, not competitor truth, full UX quality, live CI, device performance or production readiness. See [release requirements](references/verification-and-release.md).
+
