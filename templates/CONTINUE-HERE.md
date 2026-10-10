@@ -5,6 +5,19 @@
 **Canonical plan version:** <!-- TODO: link current docs/DECISIONS.md -->  
 **Project phase:** IDEA / DISCOVERY / DESIGN / BUILD / INTEGRATION / RELEASE / OPERATE
 
+## Outcome-first continuation prompt
+
+Continue the existing customer milestone after reading this file, AGENTS.md,
+the local Factory skill and relevant feature contracts. Refresh main, relevant
+PR heads/files and live exact-path claims; recover local improvements.
+Finish missing connected repository/API/client/adapters and meaningful tests
+before another isolated helper. Reuse canonical tools and authorities.
+Obtain bounded shared-file transfers; use one reviewed safe integration baseline.
+For each held PR name exact head, concrete blocker, responsible owner and next
+executable action. Continue independent source while external checks are assigned.
+Do not call a partial safeguard, placeholder destination or evidence checker a
+completed feature. Source integration and production qualification are separate.
+
 ## Current accepted scope
 <!-- TODO: reference accepted requirement IDs and exclusions -->
 
@@ -24,3 +37,4 @@
 <!-- TODO: security, data/backup, device/provider, CI and budget caveats -->
 
 Historical decisions must be reconciled, not overwritten. Never assume this file is newer than live GitHub.
+
