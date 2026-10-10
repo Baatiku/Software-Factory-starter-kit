@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased — 2026-10-10
+
+Documentation lesson: outcome-first dispatch, live PR/claim-based backlog interpretation, canonical helper consolidation, one reviewed integration baseline, bounded shared-file transfers and accountable toolchain/merge blockers. Prevent partial guard work from being mistaken for lane completion. Compatibility: existing ownership/test/release gates and customized scaffold files remain; existing projects intentionally adopt the new dispatch policy. No runtime/template/script or skill package version changed. Validation is documentation consistency and preserved source-tree checks, not product acceptance.
+
 ## [0.4.3] — 2026-10-09
 
 Made merging compatible source-tested PRs the default delivery step instead of parking completed work indefinitely. Separated integration from production-release evidence, defined alternate-runner behavior for zero-step CI failures, guarded merge-to-main against Git-connected auto-deployment, and updated generated agent and handoff templates to track merge completion. Production authorization, security, independent restoration and provider tests remain mandatory release gates. Existing customized project-local factory bundles need intentional updates: bootstrap preserves them.
