@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+Carry the source-first handoff lesson into the entry skill, contributor rules and generated continuation templates: finite milestone closure, implementation/integration completed before local pull, and execution-only capability blockers with exact commands. No runtime checker/schema changes or relaxation of source-check/release gates. Existing customized bundles require intentional adoption.
+
 ## [0.4.4] — 2026-10-10
 
 Documentation lesson: outcome-first dispatch, live PR/claim-based backlog interpretation, canonical helper consolidation, one reviewed integration baseline, bounded shared-file transfers and accountable toolchain/merge blockers. Prevent partial guard work from being mistaken for lane completion. Compatibility: existing ownership/test/release gates and customized scaffold files remain; existing projects intentionally adopt the new dispatch policy. Entry skill and generated contributor/continuation/workstream/handoff rules now inherit this policy. Optional delivery-schema v1 structural checks reject missing milestone/blocker ownership and false source-completeness claims; legacy handoffs remain compatible. Fresh bootstrap, preserved customizations and packaged skill propagation are regression-tested. Existing projects must intentionally upgrade customized files; no product acceptance is implied.
