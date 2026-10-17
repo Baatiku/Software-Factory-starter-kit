@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+2026-10-17 — Added portable security lessons from an authentication/payment integration audit: distinct one-time code purposes, no alternate login bypass around a configured PIN/password method, session/action-bound financial grants and exact provider webhook exceptions to customer account-status guards. Compatibility: guidance-only change; no schema, runtime, template, or existing project behavior changed. Follow project-specific authentication contracts and document acceptance tests.\n
 Carry the source-first handoff lesson into the entry skill, contributor rules and generated continuation templates: finite milestone closure, implementation/integration completed before local pull, and execution-only capability blockers with exact commands. No runtime checker/schema changes or relaxation of source-check/release gates. Existing customized bundles require intentional adoption.
 
 ## [0.4.4] — 2026-10-10
