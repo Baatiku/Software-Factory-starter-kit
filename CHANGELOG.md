@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+2026-10-18 — Record owner-authorized container-first execution fallback: when hosted GitHub runners cannot run, try local/container toolchains, document isolated versus checkout-wide evidence, and merge reviewed compatible development code when a project owner explicitly requests merge-first despite NOT_RUN checks. Preserve branch protection, security/financial safeguards, and separate production-release qualification. Guidance-only; no runtime or existing scaffold changes.
+
+
 2026-10-17 — Added portable security lessons from an authentication/payment integration audit: distinct one-time code purposes, no alternate login bypass around a configured PIN/password method, session/action-bound financial grants and exact provider webhook exceptions to customer account-status guards. Compatibility: guidance-only change; no schema, runtime, template, or existing project behavior changed. Follow project-specific authentication contracts and document acceptance tests.\n
 Carry the source-first handoff lesson into the entry skill, contributor rules and generated continuation templates: finite milestone closure, implementation/integration completed before local pull, and execution-only capability blockers with exact commands. No runtime checker/schema changes or relaxation of source-check/release gates. Existing customized bundles require intentional adoption.
 
