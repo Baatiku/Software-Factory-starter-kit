@@ -6,7 +6,7 @@ from pathlib import Path
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location("factory_claims", ROOT / "scripts" / "claims.py")
+spec = importlib.util.spec_from_file_location("factory_claims", ROOT / "factory" / "tools" / "github_claims.py")
 claims = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(claims)
 

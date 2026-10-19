@@ -1,6 +1,10 @@
 ---
 name: work-factory
-description: Use when a user asks to plan, create, improve, operate, automate, research, publish, design, analyze or complete substantial work across software and non-software domains.
+description: Use for substantial user work across software, publishing, research, AI agents, automation, design, operations, infrastructure and analytics. Dispatches appropriate specialist playbooks without forcing irrelevant process.
 ---
-# Universal Work Factory v1.0.0
-Find the project or repository root. Read `factory/core/routing.md`, `factory/core/execution.md`, `factory/core/evidence.md` and `factory/core/security.md` (generated projects use `.factory/core/`). Route by the intended result; load only the applicable `factory/packs/<profile>/PLAYBOOK.md` and specialist skill. For continuing projects, inspect actual current artifacts, active changes and instructions before making changes. Never invent access, execution, publication or test proof. Work proportionally: quick work should not create full project scaffolds. For execution requests, implement real outcomes and return the exact validated artifacts; only external, destructive or regulated actions require the relevant authorization. Use `scripts/factory.py` for optional project initialization, safe upgrade previews and structural checks. Local generated projects have `.factory/bin/factory.py`; its `--factory-root` should point to a full kit checkout when upgrading.
+
+# Universal Work Factory 1.0.1
+
+Find the current project/repository or installed skill root. In the toolkit repository read `factory/core/routing.md`, `factory/core/execution.md`, `factory/core/evidence.md` and `factory/core/security.md`. In portable installed skills these are sibling `core/` files; in generated projects they live in `.factory/core/`. Load only the applicable `factory/packs/<profile>/PLAYBOOK.md` (portable `packs/`, generated `.factory/packs/`) and specialized skill.
+
+Use the actual current deliverable and user requirements rather than stale prompts or historic methods. Adapt depth proportionally, with complete UI planning for screen-based projects, external evidence for research, revision authority for publishing and authenticated tools for automation. Avoid unnecessary features and repeated clarifications. For implementation requests, complete real source/deliverables and merge compatible work when authorized and safe; keep production qualification distinct. Never fabricate installed capabilities, execution or verification. Use the dependency-free `scripts/factory.py` (generated `.factory/bin/factory.py`) when scaffolding/upgrading is useful, not as a prerequisite for trivial tasks. Upgrades require a full current toolkit checkout.

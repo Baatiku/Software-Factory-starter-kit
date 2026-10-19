@@ -1,5 +1,7 @@
-# Coordination, continuation and ownership
-Maintain one canonical living outcome record and only the specialized supporting artifacts needed. Use current project source, active changes and accepted decisions over stale handoffs. Keep a bounded status: delivered, unresolved, blocked, next executable action.
-For simultaneous code writers: exact path claims, immutable SHAs, PR reconciliation, one owner for contested files, dependency-aware merge, distinct release gate. The legacy five-minute CAS coordinator is a cooperative GitHub policy, not an authentication authority.
-For editors/designers/researchers: prefer a named artifact/revision owner and tracked approval instead of GitHub claims. Do not force PRs on documents and campaigns.
-Complete the task rather than stopping after plans or scaffolds when execution is requested and possible. Avoid destructive cleanup unless authorized; retire obsolete files only after ensuring they are not active contracts or needed records.
+# Coordination, handoffs and ownership
+
+Maintain one canonical current work outcome and only the necessary specialist artifacts. Prefer current source, active changes and owner decisions over stale handoffs. Record delivered, incomplete, blocker, owner and next executable step.
+
+For cooperating code writers use exact-path GitHub CAS claims, immutable SHAs, PR reconciliation, protected contested paths, dependency-aware integration and a separate release gate. The five-minute coordinator is not GitHub access control; expired claims need reconciliation, not automatic takeover.
+
+For researchers, editors, designers and business operators, track an artifact/revision owner and needed approvals without mandatory PRs. Complete user-requested implementation rather than stopping at a plan when real execution is possible. For authorized cleanup, migrate unique behavior/tests before deleting obsolete source. Never pretend an unexecuted action happened.

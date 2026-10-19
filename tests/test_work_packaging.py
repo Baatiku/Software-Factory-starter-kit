@@ -24,6 +24,11 @@ class WorkFactoryPackageTests(unittest.TestCase):
             with zipfile.ZipFile(p) as z:
                 self.assertIsNone(z.testzip())
                 self.assertIn('work-factory/SKILL.md', z.namelist())
+                self.assertIn('work-factory/packs/software/references/screen-design.md', z.namelist())
+                skill = z.read('work-factory/SKILL.md').decode()
+                self.assertIn('core/routing.md', skill)
+                self.assertIn('packs/<profile>/PLAYBOOK.md', skill)
+                self.assertNotIn('factory/core/routing.md', skill)
                 self.assertIn('work-factory/packs/analytics/PLAYBOOK.md', z.namelist())
             p2 = Path(d) / 'research.zip'
             mod.build(p2, 'research')

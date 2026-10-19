@@ -75,7 +75,8 @@ class UniversalFactoryTests(unittest.TestCase):
         shutil.copytree(ROOT / '.agents', kit / '.agents')
         (kit / 'scripts').mkdir()
         shutil.copy(ROOT / 'scripts/factory.py', kit / 'scripts/factory.py')
-        shutil.copy(ROOT / 'scripts/claims.py', kit / 'scripts/claims.py')
+        (kit / 'factory/tools').mkdir(parents=True, exist_ok=True)
+        shutil.copy(ROOT / 'factory/tools/github_claims.py', kit / 'factory/tools/github_claims.py')
         fac.init(self.project, kit, 'research study', 'research')
         f = kit / 'factory/core/routing.md'
         f.write_text('upstream new')

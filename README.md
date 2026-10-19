@@ -1,98 +1,41 @@
-# Universal Work Factory 1.0
+# Universal Work Factory
 
-A modular vendor-neutral operating toolkit for **software, AI automation, research, publishing, design, business, infrastructure and analytics**. Preserves v0.4.x Software Factory compatibility while adding shared evidence/security rules and eight optional specialist packs. This is not an autonomous hosted service.
+**One actively maintained toolkit · version 1.0.1** for developing software, research, news/content publishing, automation and agents, design, business operations, infrastructure and analytics. The factory is a repository of **executable project tooling, modular skills, tested coordination, and reusable methods**, not a continuously running hosted agent or a modification of your ChatGPT account.
 
-## New quick start
+## Start
+
+For an existing empty or partially created project directory:
 
 ```bash
-python scripts/factory.py init --repo ./my-project --idea "Publish credible articles" --profile publishing --depth standard
-python scripts/factory.py check --repo ./my-project --gate structure
-python scripts/factory.py check --repo ./my-project --gate delivery
-python scripts/factory.py upgrade --repo ./my-project
-python scripts/factory.py upgrade --repo ./my-project --apply
+python scripts/factory.py init --repo ./project --idea "Build a publishing workflow" --profile publishing
+python scripts/factory.py check --repo ./project --gate structure
+python scripts/factory.py upgrade --repo ./project              # preview only
+python scripts/factory.py upgrade --repo ./project --apply      # reviewed update
+python scripts/check_kit.py                                     # validate the kit itself
+python -m unittest discover -s tests -v
 python scripts/package_work_factory.py --profile all --output dist/work-factory.zip
 ```
 
-Create the target directory beforehand. Profiles: `general`, `software`, `publishing`, `research`, `automation`, `design`, `business`, `infrastructure`, `analytics`. `--profile auto` uses conservative keyword hints; ambiguous multi-domain work defaults to general, so select a primary specialty explicitly for important projects and combine playbooks where needed. Depths: `quick`, `standard`, `high-assurance`; auto depth escalates finance and sensitive requests. Scaffolding does not authorize external actions or prove completion.
+Profiles: `general`, `software`, `publishing`, `research`, `automation`, `design`, `business`, `infrastructure`, `analytics`. Pick the primary profile explicitly when several apply; load additional playbooks as needed. `--profile auto` uses a conservative keyword heuristic, not a model or a complete intent classifier. Depth: `quick`, `standard` or `high-assurance`. Small tasks should be completed directly without creating project paperwork.
 
-The new `scripts/factory.py` is additive to historical `scripts/bootstrap.py`. Do not use the old software scaffold for non-software work. The new upgrader only rewrites unmodified factory-owned files after explicit `--apply`; preexisting/customized rules remain unchanged. See [migration](factory/MIGRATION.md), [acceptance matrix](factory/EVALUATION.md), [core](factory/core/routing.md) and [specialist packs](factory/packs/).
+## Single source of truth
 
----
+- [Work router](.agents/skills/work-factory/SKILL.md) and [nine domain skill entries](.agents/skills/), including the general route.
+- [Universal core](factory/core/) for routing, execution, evidence, security, coordination and improvement.
+- [Eight specialist packs](factory/packs/) plus the general pack. Software's detailed playbooks are now under [factory/packs/software/references](factory/packs/software/references).
+- [Adaptive bootstrap/check/upgrade CLI](scripts/factory.py), [GitHub CAS coordination tool](factory/tools/github_claims.py), [portable packaging](scripts/package_work_factory.py), [tests](tests/), [evaluation](factory/EVALUATION.md), and [migration guidance](factory/MIGRATION.md).
+- [ChatGPT setup and account capability notes](install/CHATGPT-SETUP.md) and [custom-instruction snippet](install/CUSTOM-INSTRUCTIONS.txt).
 
-# Legacy Software Factory v0.4.x (retained)
+## Project principles
 
-**Factory v0.4.4** — a reusable, vendor-neutral engineering workflow developed from lessons learned building Masanawa. Its purpose is to turn a brief product idea into a researched, simple, screen-complete, implementable and verifiable product.
+Research peers and alternatives with dated evidence; identify what to borrow, improve and omit. For software, specify all screens, journeys and interactions before parallel UI work. Use current provider comparisons and total cost; choose simple, maintainable, portable solutions. Build complete outcomes with scoped permissions, real tests and honest evidence; coordinate source ownership and merge compatible, tested work promptly, while separately gating production. Record lessons that generalize; do not import product-specific architecture as universal policy.
 
-This repository is **a skill and executable planning/coordination starter kit**, not an always-on autonomous service. It cannot create parallel ChatGPT conversations automatically, install account-wide skills, or guarantee releases without actual access and tests. Documentation is never proof that an application works.
+The `init` command **never overwrites existing files**. `upgrade` previews changes by default, updates only unchanged factory-owned files when applied and preserves local modifications. Structural checks are not proof of a working application, published article, data report or live deployment.
 
-## Activate across chats and install portable skills
+## ChatGPT installation
 
-Changing this GitHub repository does **not** change your ChatGPT account Memory, Custom Instructions or installed Skills. See [installation steps](install/INSTALLATION.md).
+Skill creation/upload is account and workspace dependent. This repository cannot install itself into ChatGPT or modify ChatGPT memory. For accounts with Skills access, follow [ChatGPT setup](install/CHATGPT-SETUP.md) using the CI-generated `work-factory.zip`. For other accounts, place the short [custom instruction](install/CUSTOM-INSTRUCTIONS.txt) into Settings → Personalization; ChatGPT can read this repository through a connected GitHub tool when available. ZIP creation does not equal installation.
 
-- [Universal Custom Instructions trigger](install/CUSTOM-INSTRUCTIONS.txt) — paste into ChatGPT Personalization and save.
-- [Memory summary proposal](install/MEMORY-SUMMARY-PROPOSAL.txt) — request the summary change in your Memory settings.
-- Portable skill ZIP — generated by running python scripts/package_skill.py, with a downloadable artifact attached to GitHub Actions. Install in eligible ChatGPT Skills or extract into the Codex skills directory.
+## Scope of cleanup
 
-## Quick start
-
-1. Read [the factory skill](.agents/skills/software-factory/SKILL.md) and [factory rules](AGENTS.md).
-2. In a new repository, run: python path/to/Software-Factory-starter-kit/scripts/bootstrap.py --repo /path/to/new/repo --idea "Your product idea"
-3. Bootstrap now copies the factory skill to `.agents/skills/software-factory/`, provider-neutral playbooks to `.factory/playbooks/` and local scripts to `.factory/bin/`, so supported Codex workflows can discover project-local guidance. Research and *fill* the deliberately incomplete project documents.
-4. Run: python /path/to/new/repo/.factory/bin/check.py --repo /path/to/new/repo --gate design
-5. Only start independent UI work after the design gate is complete. Register exact-path ownership claims, heartbeat during work, and publish SHA-specific handoffs.
-6. **Merge-first:** integrate completed, contract-tested PRs promptly into main if non-deploying, or into a shared integration branch if main triggers production. Use Work or another controlled executor to verify full journeys before any release.
-
-## GitHub-backed workstream claims (v0.4)
-
-Run the project's `.factory/bin/claims.py` against its GitHub repository. Its default coordination branch is `factory/claims`, so claims do not clutter `main`. Use a securely provided least-privilege `GITHUB_TOKEN` with repository Contents read/write; **never paste tokens in command examples, chats, PRs, or logs**.
-
-```bash
-python .factory/bin/claims.py --repo ORG/PROJECT claim \
-  --owner window-U01 --scope U01 --branch work/u01 \
-  --base-sha <40-character-SHA-from-real-project> \
-  --path 'services/feature/**' --path 'apps/mobile/lib/feature/**'
-
-python scripts/claims.py --repo ORG/PROJECT status
-python scripts/claims.py --repo ORG/PROJECT heartbeat --owner window-U01 --claim-id CLAIM_UUID
-python scripts/claims.py --repo ORG/PROJECT release --owner window-U01 --claim-id CLAIM_UUID --reason 'Code/tests handed off in PR #123'
-```
-
-Claims for multiple exact files or `directory/**` roots are updated together with a GitHub blob-SHA precondition and conflict-retry. **Five-minute expiry blocks new claimants until human-reviewed reconciliation or original-owner release; it is not automatic takeover.** This is cooperative coordination, *not* GitHub permission enforcement or live-provider qualification. See [the protocol](references/parallel-delivery.md).
-
-## Planning outputs
-
-- Product research: dated competitors (ADOPT/AVOID/DIFFERENTIATE), user jobs, exclusions and proof.
-- UX: every screen, navigation, controls, responses, permissions, failure/empty/offline states and realistic wireframes or visual references when appropriate.
-- Engineering: requirement IDs, typed API/data contracts, stack comparison, three-scale cost model, security/privacy controls, test map and operating plan.
-- Execution: independent vertical slices, one owner per contested path, short leases with recovery, SHA-specific PR handoffs.
-- Release: independent execution proof across the real UI → API → auth → database/provider → readback path, staged deployment and rollback, accountable sign-off.
-- Improvement: postmortem and lessons register, scoped amendments, backwards-compatible templates and versioned releases.
-
-## Key distinctions
-
-**Scaffold present ≠ researched. Design complete ≠ tested. Code present ≠ integrated. Code merged ≠ released. CI configuration ≠ passing CI. Health endpoint ≠ real customer journey.**
-
-A simple brochure site should not receive fintech-level paperwork. A wallet, health or identity platform must receive deeper threat, privacy, integrity and operating controls. Build the simplest sufficient solution, not the largest plan.
-
-## Contents
-
-- [.agents/skills/software-factory/SKILL.md](.agents/skills/software-factory/SKILL.md): skill entry point for supported Codex environments.
-- [AGENTS.md](AGENTS.md): repo and generated-project operating instructions.
-- [references/](references/): planning, UX, owner defaults, provider-neutral skill audit, threat, verification, parallel work and improvement playbooks.
-- [templates/](templates/): starter documents copied without overwriting existing files.
-- [scripts/](scripts/): safe bootstrap, CAS-backed workstream claims and evidence-aware structural checks.
-- [tests/](tests/): positive/negative regression tests.
-- [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md): future improvement process.
-
-## Practical tool use
-
-Use available connected GitHub tools for safe repository operations, Work for multi-step cross-file integration, Codex for code-level implementation, Figma for actual editable design deliverables where available, and provider-specific skills only after evaluating whether that provider suits the project. Never assume an installed vendor skill implies vendor preference.
-
-## Recommended future evolution
-
-Add a properly authenticated GitHub App / PR policy check that verifies claimed owners and changed paths, prevents bypassing the voluntary CAS registry, and records per-SHA verification evidence. This standalone coordinator does not authenticate owner names or restrict direct Git pushes.
-
-## Status
-
-v0.4.4 is a starter kit: scripts validate structure and internal references, not competitor truth, full UX quality, live CI, device performance or production readiness. See [release requirements](references/verification-and-release.md).
-
+Only the current universal skill, packs, templates, tests and packaging are maintained. Previous starter scaffolds and duplicate installation files have been retired from this repository's current tree. Git commit history and project-owned copies in other repositories are intentionally not rewritten.

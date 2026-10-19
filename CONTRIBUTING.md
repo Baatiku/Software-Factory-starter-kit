@@ -1,13 +1,12 @@
-# Contributing and factory updates
+# Contributing to Universal Work Factory
 
-This project should continuously improve through evidence, not accumulated bureaucracy.
+Keep **one** maintained skill family and shared references. New domain capability belongs in `factory/packs/<profile>/`, and universal reusable guidance in `factory/core/`; avoid copy-pasted variants.
 
-1. Open a GitHub issue or explain a concrete observed gap (missing page, duplicate work, security incident, bad vendor choice, integration failure).
-2. Separate universally reusable process rules from one product's requirements.
-3. Change the smallest affected skill/reference/template/script. Update CHANGELOG.md and, for changed scripts, add a failing-before/passing-after regression test.
-4. Preserve generated-project compatibility; document migration when renaming or removing templates/fields.
-5. Run: python -m unittest discover -s tests -v; python scripts/check.py --repo . --gate kit
-6. Use a PR for nontrivial changes, with expected files, safety impact and clear verification evidence. Protect main with human review where possible.
-7. A project-specific adaptation belongs in that project's docs; only generalizable lessons come back here.
+1. Identify a real limitation or lesson from a project. Classify it as universal, pack-specific or project-only.
+2. Make the smallest necessary update, remove conflicting rules, and keep requirements accurate.
+3. Add positive/negative tests for code changes and document a migration for existing generated projects when a format/path changes.
+4. Execute `python -m unittest discover -s tests -v`, `python scripts/check_kit.py` and `python scripts/package_work_factory.py --profile all --output dist/work-factory.zip`.
+5. Open a reviewed PR, merge safe compatible source after checks, separately qualify publication/prod effects.
+6. Never commit secrets, private memories, proprietary datasets or fabricated execution evidence.
 
-Do not include private user memories, personal secrets, proprietary reference files or provider tokens in this public repository.
+The factory repository is the source of truth for methods; do not assume changing this repository changes anyone's ChatGPT account.
