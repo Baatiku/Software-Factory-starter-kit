@@ -28,3 +28,15 @@ Define SLOs/alerts, metrics/log limits and PII redaction, rate/cost guards, back
 ## Release
 
 Use explicit sign-offs for destructive migrations, credentials, paid services, external messages, production releases and regulatory high-risk choices. Tested staging and controlled roll-forward/rollback instructions are required for material changes. Prove actual authorization boundaries with negative tests.
+
+## Private agent memory and derived-state deletion
+
+- Treat conversation transcripts, canonical memory revisions and generated summaries as distinct data classes. Preserve source-linked immutable audit where lawful, but keep private conversational **summaries as disposable projections**, not irrevocable audit entities when the user can correct or forget memories.
+- Scope retrieval, retention, revision correction, export and deletion to the canonical authenticated tenant/user/agent/relationship. Never rely on model instructions, creator ownership or an opaque memory ID alone for permission. Reject cross-owner access, replay after account disablement and stale revision writes in SQL-backed integration tests.
+- Bind every derived summary to source record and revision identifiers. On correction/forget, invalidate the projection transactionally; on recall, recheck that all sources remain active and current. Keep privacy deletion separate from financial/legal holds and independently test account purge with foreign-owner data present.
+- Opt-in before automatic personal-memory extraction. Keep recalled text and learned preferences as untrusted evidence; they may aid safe discovery but cannot grant a Skill, rewrite system authority or authorize money/tools. Use capped extraction, bounded context tokens, lineage, explicit user controls and recovery receipts for completed turns.
+
+## Container dependency-manifest completeness
+
+- For every production container build, check **all files referenced by the package-manager lockfile and workspace manifest** (for example pnpm `patchedDependencies` entries under `patches/`). They must enter the Docker build context via `COPY` **before** running frozen dependency installation; a successful monorepo checkout `pnpm install` does not prove the image can build.
+- Include a cheap Dockerfile/manifest regression test and validate actual CI image builds. When production build logs say a referenced patch is missing, fix the reproducible source context rather than changing the lockfile or bypassing `--frozen-lockfile`. Prove deploy/runtime separately from local TypeScript tests.
