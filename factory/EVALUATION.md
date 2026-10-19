@@ -1,14 +1,16 @@
-# Work Factory acceptance matrix
-| Scenario | Expected pack(s) | Minimum outcome | Excluded friction |
-|---|---|---|---|
-| One article | publishing | source-backed draft with claims | software screens, Git claims |
-| Scheduled newsroom | publishing + automation | scoped auth, scheduling, approval, revision and readback tests | unchecked agent publication |
-| Flutter product | software | complete screens/states, contracts, source and tests | duplicate stacks and disconnected mock UI |
-| Financial wallet | software, high-assurance | safe ledger, auth, recovery and actual-provider gates | silent financial operations |
-| Market research | research | dated and cited comparison | irrelevant deployment |
-| Logo | design | requested image/source, rights/accessibility | API/database scaffolds |
-| Corporate operating plan | business | feasible cost/risk model | fictitious metrics |
-| Hosting migration | infrastructure | measured plan, staging, backup, rollback | speculative resources |
-| Dashboard | analytics | reproducible measures/data lineage | invented dataset |
+# Universal Work Factory acceptance matrix
 
-A completed document template never proves quality, delivery, publishing rights or production qualification. The 1.0 CLI unit suite tests all profiles, safe modification preservation, misleading verification and traversal defenses. Pilot this matrix on representative actual work to test qualitative outcomes; until then those outcome E2Es are NOT_RUN. Track unneeded files, unnecessary provider calls and late rework before raising strictness.
+| Scenario | Activated specialization | Minimum actual result | Avoid |
+| --- | --- | --- | --- |
+| Short article | Publishing | Dated sources, cited claims and appropriate draft | Git/CI/screens |
+| Automated publication | Publishing + automation | Scoped tool contract, scheduled state, dedupe, provenance, real readback | Fake publication |
+| Flutter app | Software | All screen states and real source/test integration | Disconnected mocks |
+| Financial wallet | Software + high assurance | Authorization, idempotency, reconciliation and provider proof | Silent monetary actions |
+| Cloud comparison | Research + infrastructure | Current evidence and total costs | Unwanted provisioning |
+| Graphic | Design | Actual requested medium | API/database boilerplate |
+| Business operations | Business | Measurable workflow, constraints and costs | Invented statistics |
+| Infrastructure migration | Infrastructure | Staged rollback/restore and exact deployment | Unsupported cutovers |
+| Data dashboard | Analytics | Reproducible data, calculations, lineage | Invented data |
+| Toolkit upgrade | Core | Safe preview, exact changed files, local customization preserved | Concurrent active versions |
+
+CI tests validate router behavior, safe upgrades, single-source inventory, packaging, coordination and evidence-claim constraints. They do not constitute acceptance of independent customer projects. Verify real outcomes separately.

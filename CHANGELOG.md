@@ -1,47 +1,9 @@
 # Changelog
 
+## [1.0.1] — 2026-10-19
+
+Consolidated the Universal Work Factory as the only active toolkit. Moved useful software playbooks into the software specialist pack, migrated GitHub CAS coordinator and regression tests to the universal tooling, removed duplicate historical scaffolds/skills/templates/scripts/tests/packaging, and rewrote README/AGENTS/install guidance and CI to point to one runtime and one ZIP. Added single-source structural checks and portable skill-reference tests. Previous project copies remain project-owned; Git history remains. Account-level ChatGPT Skills installation and Memory changes require supported product settings and cannot be asserted from repository modifications.
+
 ## [1.0.0] — 2026-10-19
-Universal Work Factory router, six shared cross-domain playbooks, eight specialist packs/skills, lean templates, proportional bootstrap, dry-run SHA-256-preserving upgrades, structural evidence gates, deterministic ZIP packaging and positive/negative regression tests. Retains v0.4.x software scaffold, references, CAS claims, legacy ZIP and tests. Existing projects are not rewritten or migrated automatically. See factory/MIGRATION.md.
 
-
-## Unreleased
-
-2026-10-18 — Record owner-authorized container-first execution fallback: when hosted GitHub runners cannot run, try local/container toolchains, document isolated versus checkout-wide evidence, and merge reviewed compatible development code when a project owner explicitly requests merge-first despite NOT_RUN checks. Preserve branch protection, security/financial safeguards, and separate production-release qualification. Guidance-only; no runtime or existing scaffold changes.
-
-
-2026-10-17 — Added portable security lessons from an authentication/payment integration audit: distinct one-time code purposes, no alternate login bypass around a configured PIN/password method, session/action-bound financial grants and exact provider webhook exceptions to customer account-status guards. Compatibility: guidance-only change; no schema, runtime, template, or existing project behavior changed. Follow project-specific authentication contracts and document acceptance tests.\n
-Carry the source-first handoff lesson into the entry skill, contributor rules and generated continuation templates: finite milestone closure, implementation/integration completed before local pull, and execution-only capability blockers with exact commands. No runtime checker/schema changes or relaxation of source-check/release gates. Existing customized bundles require intentional adoption.
-
-## [0.4.4] — 2026-10-10
-
-Documentation lesson: outcome-first dispatch, live PR/claim-based backlog interpretation, canonical helper consolidation, one reviewed integration baseline, bounded shared-file transfers and accountable toolchain/merge blockers. Prevent partial guard work from being mistaken for lane completion. Compatibility: existing ownership/test/release gates and customized scaffold files remain; existing projects intentionally adopt the new dispatch policy. Entry skill and generated contributor/continuation/workstream/handoff rules now inherit this policy. Optional delivery-schema v1 structural checks reject missing milestone/blocker ownership and false source-completeness claims; legacy handoffs remain compatible. Fresh bootstrap, preserved customizations and packaged skill propagation are regression-tested. Existing projects must intentionally upgrade customized files; no product acceptance is implied.
-
-## [0.4.3] — 2026-10-09
-
-Made merging compatible source-tested PRs the default delivery step instead of parking completed work indefinitely. Separated integration from production-release evidence, defined alternate-runner behavior for zero-step CI failures, guarded merge-to-main against Git-connected auto-deployment, and updated generated agent and handoff templates to track merge completion. Production authorization, security, independent restoration and provider tests remain mandatory release gates. Existing customized project-local factory bundles need intentional updates: bootstrap preserves them.
-
-## [0.4.2] — 2026-10-09
-
-Added universal Custom Instructions trigger and Memory-summary proposal, optimized skill activation metadata, generated deterministic self-contained ZIP skills, CI upload and packaging tests. Account settings and ChatGPT Skills installation still require user action/eligibility; producing a package is not an installation.
-
-
-## [0.4.1] — 2026-10-09
-
-Bootstrapping now produces a self-contained project with local skill, playbooks, coordinator/check tools and pinned factory version. Re-running preserves customized files; structural checks require the local runtime bundle. Added idempotency, no-overwrite and self-contained skill tests.
-
-## [0.4.0] — 2026-10-09
-
-Added a dependency-free GitHub CAS ownership coordinator, five-minute renewable multi-path claims, conflict and stale-claim blocking, audited owner-only releases, CLI guidance and simulated-concurrency regression tests. This protects cooperating workstreams but does not enforce ownership against direct Git pushes.
-
-## [0.3.1] — 2026-10-09
-
-Added non-sensitive enduring owner defaults, transferable lessons from available platform skills, stronger kit integrity checks, a positive design-gate regression and explicit rejection of simulated verification claimed as real.
-
-## [0.3.0] — 2026-10-09
-
-Initial public GitHub release of the improved Software Factory kit: portable skill, provider-neutral research and architecture, detailed screen and contract planning, safe parallel ownership guidance, end-to-end evidence rules, threat/privacy/operations references, templates, bootstrap/check scripts, CI, and regression tests. Replaces the previous unpublished v0.2 ZIP as the maintained source.
-
-## [0.2.0] — 2026-10-09 (local prototype)
-
-Added competitor benchmark, simplicity reviews, page-by-page screen design and stack/cost discipline; only available as a local starter archive before this repository was initialized.
-
+Introduced shared work-routing, evidence and safety core, eight specialist packs plus general skills, adaptive project bootstrap, safe dry-run upgrades, portfolio-neutral completion evidence and deterministic skill packaging.

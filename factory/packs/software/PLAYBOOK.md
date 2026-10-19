@@ -1,19 +1,27 @@
 # Software engineering pack
 
-## Discover and decide
-Inspect existing source, open/draft PRs, tests, migrations and provider contracts before editing. Research substitutes and competitors; adopt proven patterns without copying protected designs. Classify essential, differentiating, later and excluded features; record acceptance outcomes.
+## Discover and scope
+Inspect current code, open changes, tests, migrations and providers. Research competitor and substitute flows; borrow proven patterns ethically, identify unmet needs and exclude needless features. Specify user outcomes and complete acceptance requirements.
 
-## Complete experience
-For each actor enumerate all routes, screens, modals, admin surfaces, navigation, layouts, controls and journeys. Specify loading, empty, partial, error, offline, permission, retry, deletion, large-text and low-end-device states. Map requirement → screen → API/data contract → implementation → test before parallel UI development.
+## Specify all screens and journeys
+Inventory actors, routes, tabs, modals, administrative screens, navigation and layouts before parallel implementation. Define controls, input validation, content, loading/empty/partial/error/offline/permission/retry/recovery states; keyboard/screenreader/low-memory device behavior and data/API contracts. Trace requirement → screen → journey → implementation → executable test.
 
-## Engineering and operations
-Select affordable maintained technology based on dated vendor and portability comparison. Define typed contracts, authentication, privacy, migration invariants, secure provider adapters, observability and restoration. Implement complete client→API→database/provider→readback vertical slices including negative, replay and account-isolation tests. Preserve existing financial liabilities and source.
+## Engineer a complete result
+Select maintained affordable technologies using dated pricing and pilot/launch/scale totals, region support and portability. Define typed APIs, secure auth, server-side permissions, transactions, migrations, provider credentials, backups, observability and rollback. Complete client→API→DB/provider→readback flows with positive/negative/integration tests, including idempotency and isolation. Preserve financial history and previous operational obligations.
 
-## Parallel and release
-Use GitHub CAS exact-path claims for cooperating source writers; they do not enforce permission. Assign contested router/auth/database/payment/deploy paths to one integrator. Each PR handoff includes exact SHAs, changed paths, executed tests and blockers. Integrate compatible tested source promptly but independently gate real production deployments. If CI cannot obtain a runner, try accessible container/local checks, label NOT_RUN honestly, and do not invent E2E results. Test actual device/browser/provider journeys and rollback proportionately before release.
+## Coordinate and release
+Use the GitHub claim coordinator at `.factory/bin/claims.py` in generated projects (upstream `factory/tools/github_claims.py`); a path lease is cooperative, not permission control. One integrator owns contested files and exact SHA handoffs. Merge safe compatible code after relevant tests; separately gate releases where main auto-deploys. For missing runners attempt accessible local/container checks, record NOT_RUN precisely and do not claim mocks as real provider acceptance. Qualify actual browser/device/provider paths and rollback proportional to risk.
 
-## Offline detailed references
-Generated software projects receive `.factory/packs/software/references/` containing `screen-design.md`, `research-and-simplicity.md`, `technology-economics.md`, `parallel-delivery.md`, `verification-and-release.md`, `security-privacy-operations.md`. Upstream source lives in `references/`.
+## Specialized references
+All reusable detailed engineering playbooks live in this pack:
+- `references/screen-design.md`
+- `references/research-and-simplicity.md`
+- `references/technology-economics.md`
+- `references/parallel-delivery.md`
+- `references/verification-and-release.md`
+- `references/security-privacy-operations.md`
 
-## Completion proof
-Functional source, applicable actual tests bound to a SHA and separately qualified live deployment/provider evidence. A green static check, simulated test or merged PR alone is not a released feature.
+These are copied to the project as `.factory/packs/software/references/` and packaged under `work-factory/packs/software/references/`. There is no secondary software toolkit.
+
+## Completion
+Working end-to-end source and applicable build/unit/contract/integration proof bound to exact version, with explicit device/provider/production gaps. No counterfeit or unverified completion claims.

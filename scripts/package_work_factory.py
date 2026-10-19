@@ -15,7 +15,7 @@ def files_for(profile):
     result = {
         'work-factory/SKILL.md': ROOT / '.agents/skills/work-factory/SKILL.md',
         'work-factory/scripts/factory.py': ROOT / 'scripts/factory.py',
-        'work-factory/scripts/claims.py': ROOT / 'scripts/claims.py',
+        'work-factory/scripts/claims.py': ROOT / 'factory/tools/github_claims.py',
     }
     for name in CORE_FILES:
         result['work-factory/core/' + name] = ROOT / 'factory/core' / name
@@ -23,6 +23,9 @@ def files_for(profile):
         result['work-factory/packs/' + p + '/PLAYBOOK.md'] = ROOT / 'factory/packs' / p / 'PLAYBOOK.md'
         result['work-factory/specialists/' + p + '-work/SKILL.md'] = (
             ROOT / '.agents/skills' / (p + '-work') / 'SKILL.md')
+    for f in sorted((ROOT / 'factory/packs/software/references').glob('*.md')):
+        if profile in ('all', 'software'):
+            result['work-factory/packs/software/references/' + f.name] = f
     for f in sorted((ROOT / 'factory/templates').glob('*')):
         if f.is_file():
             result['work-factory/templates/' + f.name] = f
@@ -39,7 +42,20 @@ def build(output, profile='all'):
             info = zipfile.ZipInfo(name, date_time=STAMP)
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o644 << 16
-            z.writestr(info, path.read_bytes(), compress_type=zipfile.ZIP_DEFLATED, compresslevel=9)
+            data = path.read_bytes()
+            if name.endswith('/SKILL.md'):
+                text = data.decode('utf-8')
+                if name == 'work-factory/SKILL.md':
+                    text = text.replace('factory/core/', 'core/').replace('factory/packs/', 'packs/')
+                    text = text.replace('in generated projects they live in `.core/`', 'in generated projects they live in `.factory/core/`')
+                    text = text.replace('(portable `packs/`, generated `.packs/`)', '(portable `packs/`, generated `.factory/packs/`)')
+                    text = text.replace('(generated projects use `.core/`).', '(generated projects use `.factory/core/`).')
+                    text = text.replace('Local generated projects have `.factory/bin/factory.py`; its `--factory-root` should point to a full kit checkout when upgrading.', 'Project upgrades require a full current kit checkout.')
+                else:
+                    text = text.replace('factory/core/', 'core/').replace('factory/packs/', 'packs/')
+                    text = text.replace('(in generated projects, `.core/routing.md` and `.packs/', '(in generated projects, `.factory/core/routing.md` and `.factory/packs/')
+                data = text.encode('utf-8')
+            z.writestr(info, data, compress_type=zipfile.ZIP_DEFLATED, compresslevel=9)
     return len(files)
 
 

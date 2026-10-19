@@ -10,7 +10,7 @@ import re
 import tempfile
 from pathlib import Path
 
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 PROFILES = ('general', 'software', 'publishing', 'research', 'automation',
             'design', 'business', 'infrastructure', 'analytics')
 DEPTHS = ('quick', 'standard', 'high-assurance')
@@ -134,10 +134,10 @@ def source_bundle(factory_root, profile, depth, idea):
                      'technology-economics.md', 'parallel-delivery.md',
                      'verification-and-release.md', 'security-privacy-operations.md'):
             bundle['.factory/packs/software/references/' + name] = source(
-                factory_root, 'references/' + name)
+                factory_root, 'factory/packs/software/references/' + name)
     bundle['.factory/bin/factory.py'] = source(factory_root, 'scripts/factory.py')
     if profile in ('software', 'automation', 'infrastructure'):
-        bundle['.factory/bin/claims.py'] = source(factory_root, 'scripts/claims.py')
+        bundle['.factory/bin/claims.py'] = source(factory_root, 'factory/tools/github_claims.py')
     return bundle
 
 
