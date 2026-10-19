@@ -1,4 +1,25 @@
-# Software Factory Starter Kit
+# Universal Work Factory 1.0
+
+A modular vendor-neutral operating toolkit for **software, AI automation, research, publishing, design, business, infrastructure and analytics**. Preserves v0.4.x Software Factory compatibility while adding shared evidence/security rules and eight optional specialist packs. This is not an autonomous hosted service.
+
+## New quick start
+
+```bash
+python scripts/factory.py init --repo ./my-project --idea "Publish credible articles" --profile publishing --depth standard
+python scripts/factory.py check --repo ./my-project --gate structure
+python scripts/factory.py check --repo ./my-project --gate delivery
+python scripts/factory.py upgrade --repo ./my-project
+python scripts/factory.py upgrade --repo ./my-project --apply
+python scripts/package_work_factory.py --profile all --output dist/work-factory.zip
+```
+
+Create the target directory beforehand. Profiles: `general`, `software`, `publishing`, `research`, `automation`, `design`, `business`, `infrastructure`, `analytics`. `--profile auto` uses conservative keyword hints; ambiguous multi-domain work defaults to general, so select a primary specialty explicitly for important projects and combine playbooks where needed. Depths: `quick`, `standard`, `high-assurance`; auto depth escalates finance and sensitive requests. Scaffolding does not authorize external actions or prove completion.
+
+The new `scripts/factory.py` is additive to historical `scripts/bootstrap.py`. Do not use the old software scaffold for non-software work. The new upgrader only rewrites unmodified factory-owned files after explicit `--apply`; preexisting/customized rules remain unchanged. See [migration](factory/MIGRATION.md), [acceptance matrix](factory/EVALUATION.md), [core](factory/core/routing.md) and [specialist packs](factory/packs/).
+
+---
+
+# Legacy Software Factory v0.4.x (retained)
 
 **Factory v0.4.4** — a reusable, vendor-neutral engineering workflow developed from lessons learned building Masanawa. Its purpose is to turn a brief product idea into a researched, simple, screen-complete, implementable and verifiable product.
 

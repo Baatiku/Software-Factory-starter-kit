@@ -14,6 +14,17 @@ jobs:
         run: python3 -m unittest discover -s tests -v
       - name: Build ZIP
         run: python3 scripts/package_skill.py --output dist/software-factory-skill.zip
+      - name: Build universal Work Factory ZIP
+        run: python3 scripts/package_work_factory.py --profile all --output dist/work-factory.zip
+      - name: Check universal ZIP
+        run: python3 -m zipfile -t dist/work-factory.zip
+      - name: Upload universal ZIP
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: universal-work-factory-installable-skill
+          path: dist/work-factory.zip
+          if-no-files-found: error
+          retention-days: 30
       - name: Check ZIP archive
         run: python3 -m zipfile -t dist/software-factory-skill.zip
       - name: Upload ZIP

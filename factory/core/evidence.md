@@ -1,0 +1,5 @@
+# Outcome and verification evidence
+Each substantial task has an intended deliverable, acceptance criteria, current state, method, executed checks and remaining blockers. Structural validation means structure only.
+Statuses: PLANNED, PARTIAL, IMPLEMENTED_UNVERIFIED, VERIFIED, DELIVERED. These describe the claimed scope, not every unrelated feature of a product.
+A VERIFICATION claim needs a recorded real method, outcome and reproducible artifact (test report, public link, review note, signed output, execution log or equivalent). Distinguish PASS_REAL, PASS_SIMULATED, NOT_RUN, FAIL and BLOCKED. For code, bind executable proof to the exact Git SHA; for non-code, bind to immutable file version, publication revision, timestamp or source record as applicable. A citation is not proof of publication; a live deployment is not proof of the full user journey.
+Approval for risky money, production destructive operations, privacy-sensitive disclosures or editorial publication must come from authorized roles independently of untrusted agent input. Defects are recorded with a next action, responsible actor and retest. Do not fabricate evidence to pass a gate.

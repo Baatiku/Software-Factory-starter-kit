@@ -62,7 +62,7 @@ def bootstrap(repo: Path, idea: str, template_root: Path) -> tuple[int, int]:
         install(repo / ".factory/bin" / name, source.read_text(encoding="utf-8"))
 
     changelog = (factory_root / "CHANGELOG.md").read_text(encoding="utf-8")
-    match = re.search(r"^## \[(\d+\.\d+\.\d+)\]", changelog, flags=re.M)
+    match = re.search(r"^## \[(0\.\d+\.\d+)\]", changelog, flags=re.M)
     if not match:
         raise ValueError("Factory version not found in CHANGELOG")
     install(repo / ".factory/FACTORY-VERSION", match.group(1) + "\n")

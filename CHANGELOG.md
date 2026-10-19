@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.0] — 2026-10-19
+Universal Work Factory router, six shared cross-domain playbooks, eight specialist packs/skills, lean templates, proportional bootstrap, dry-run SHA-256-preserving upgrades, structural evidence gates, deterministic ZIP packaging and positive/negative regression tests. Retains v0.4.x software scaffold, references, CAS claims, legacy ZIP and tests. Existing projects are not rewritten or migrated automatically. See factory/MIGRATION.md.
+
+
 ## Unreleased
 
 2026-10-18 — Record owner-authorized container-first execution fallback: when hosted GitHub runners cannot run, try local/container toolchains, document isolated versus checkout-wide evidence, and merge reviewed compatible development code when a project owner explicitly requests merge-first despite NOT_RUN checks. Preserve branch protection, security/financial safeguards, and separate production-release qualification. Guidance-only; no runtime or existing scaffold changes.
