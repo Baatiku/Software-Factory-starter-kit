@@ -1,0 +1,4 @@
+# Continuous improvement and portable learning
+After meaningful delivery or failure, ask what would have prevented missed scope, rework, unnecessary spending, brittle coordination or incorrect verification. Classify each lesson: universal factory, specialist pack, individual project, or temporary exception.
+Promote globally only reusable, justified changes. Every factory change needs compatibility notes, negative and positive tests where executable, and changelog. Remove obsolete/duplicated rules rather than adding conflicting prose. Benchmark simple work as well as high-risk work; the factory fails if it turns a small job into a large process.
+Measure task success, missed acceptance criteria, unnecessary file output, cost, repeated external calls, time to integrated delivery, escape defects, stale handoffs and ease of upgrading. A new version does not silently rewrite customized project instructions.

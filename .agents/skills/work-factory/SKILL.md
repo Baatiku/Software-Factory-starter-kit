@@ -1,0 +1,6 @@
+---
+name: work-factory
+description: Use when a user asks to plan, create, improve, operate, automate, research, publish, design, analyze or complete substantial work across software and non-software domains.
+---
+# Universal Work Factory v1.0.0
+Find the project or repository root. Read `factory/core/routing.md`, `factory/core/execution.md`, `factory/core/evidence.md` and `factory/core/security.md` (generated projects use `.factory/core/`). Route by the intended result; load only the applicable `factory/packs/<profile>/PLAYBOOK.md` and specialist skill. For continuing projects, inspect actual current artifacts, active changes and instructions before making changes. Never invent access, execution, publication or test proof. Work proportionally: quick work should not create full project scaffolds. For execution requests, implement real outcomes and return the exact validated artifacts; only external, destructive or regulated actions require the relevant authorization. Use `scripts/factory.py` for optional project initialization, safe upgrade previews and structural checks. Local generated projects have `.factory/bin/factory.py`; its `--factory-root` should point to a full kit checkout when upgrading.
